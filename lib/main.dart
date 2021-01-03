@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'home/home_page.dart';
+import 'myInfo_page.dart';
+import 'service_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,8 +29,8 @@ class _MyHomePageState extends State<MyHomePage> {
   var _index = 0; // 페이지 인덱스 0, 1, 2
   var _pages = [
     HomePage(),
-    Page2(),
-    Page3(),
+    ServicePage(),
+    MyInfoPage(),
   ];
 
   @override
@@ -66,24 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
               label: '내 정보', icon: Icon(Icons.account_circle)),
         ],
       ),
-    );
-  }
-}
-
-class Page2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Page2'),
-    );
-  }
-}
-
-class Page3 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Page3'),
     );
   }
 }
