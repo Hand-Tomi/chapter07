@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'service_button.dart';
+import 'top_grid_view.dart';
 
 final dummyItems = [
   'https://cdn.pixabay.com/photo/2013/07/25/13/01/stones-167089_1280.jpg',
@@ -23,11 +24,7 @@ class HomePage extends StatelessWidget {
 
   // 상단
   Widget _buildTop() {
-    return GridView.count(
-      physics: NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-      shrinkWrap: true,
-      crossAxisCount: 4,
+    return TopGridView(
       children: [
         ServiceButton(
           title: '택시',
