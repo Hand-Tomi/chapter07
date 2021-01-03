@@ -23,36 +23,34 @@ class HomePage extends StatelessWidget {
 
   // 상단
   Widget _buildTop() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20, bottom: 20),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ServiceButton(title: '택시'),
-              ServiceButton(title: '택시'),
-              ServiceButton(title: '택시'),
-              ServiceButton(title: '택시'),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ServiceButton(title: '택시'),
-              ServiceButton(title: '택시'),
-              ServiceButton(title: '택시'),
-              Opacity(
-                opacity: 0.0,
-                child: ServiceButton(title: '택시'),
-              ),
-            ],
-          ),
-        ],
-      ),
+    return GridView.count(
+      physics: NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+      shrinkWrap: true,
+      crossAxisCount: 4,
+      children: [
+        ServiceButton(
+          title: '택시',
+        ),
+        ServiceButton(
+          title: '택시',
+        ),
+        ServiceButton(
+          title: '택시',
+        ),
+        ServiceButton(
+          title: '택시',
+        ),
+        ServiceButton(
+          title: '택시',
+        ),
+        ServiceButton(
+          title: '택시',
+        ),
+        ServiceButton(
+          title: '택시',
+        ),
+      ],
     );
   }
 

@@ -11,6 +11,7 @@ class ServiceButton extends StatelessWidget {
         print('$title 클릭');
       },
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.local_taxi,
