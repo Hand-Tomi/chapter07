@@ -28,42 +28,10 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  Icon(
-                    Icons.local_taxi,
-                    size: 40,
-                  ),
-                  Text('택시'),
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.local_taxi,
-                    size: 40,
-                  ),
-                  Text('택시'),
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.local_taxi,
-                    size: 40,
-                  ),
-                  Text('택시'),
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.local_taxi,
-                    size: 40,
-                  ),
-                  Text('택시'),
-                ],
-              ),
+              _createServiceButton('택시'),
+              _createServiceButton('택시'),
+              _createServiceButton('택시'),
+              _createServiceButton('택시'),
             ],
           ),
           SizedBox(
@@ -72,52 +40,32 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  Icon(
-                    Icons.local_taxi,
-                    size: 40,
-                  ),
-                  Text('택시'),
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.local_taxi,
-                    size: 40,
-                  ),
-                  Text('택시'),
-                ],
-              ),
-              GestureDetector(
-                onTap: () {
-                  print('클릭');
-                },
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.local_taxi,
-                      size: 40,
-                    ),
-                    Text('택시'),
-                  ],
-                ),
-              ),
+              _createServiceButton('택시'),
+              _createServiceButton('택시'),
+              _createServiceButton('택시'),
               Opacity(
                 opacity: 0.0,
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.local_taxi,
-                      size: 40,
-                    ),
-                    Text('택시'),
-                  ],
-                ),
+                child: _createServiceButton('택시'),
               ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _createServiceButton(String taxi) {
+    return GestureDetector(
+      onTap: () {
+        print('$taxi 클릭');
+      },
+      child: Column(
+        children: [
+          Icon(
+            Icons.local_taxi,
+            size: 40,
+          ),
+          Text('$taxi'),
         ],
       ),
     );
