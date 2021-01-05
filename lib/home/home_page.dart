@@ -1,6 +1,7 @@
+import 'package:chapter07/home/middle_item.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
+import 'middle_slider.dart';
 import 'service_button.dart';
 import 'top_grid_view.dart';
 
@@ -51,31 +52,9 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // 중단
   Widget _buildMiddle() {
-    return CarouselSlider(
-      options: CarouselOptions(
-        height: 150.0,
-        autoPlay: true,
-      ),
-      items: dummyItems.map((url) {
-        return Builder(
-          builder: (BuildContext context) {
-            return Container(
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 5.0),
-              decoration: BoxDecoration(color: Colors.amber),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Image.network(
-                  url,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            );
-          },
-        );
-      }).toList(),
+    return MiddleSlider(
+      items: dummyItems.map((url) => MiddleItem(url: url)).toList(),
     );
   }
 
